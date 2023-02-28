@@ -69,14 +69,13 @@ const Profile = () => {
             </p>
             <div className="w-full flex flex-row flex-wrap justify-between items-center">
               {featuredProfileItems.map((item, index) => {
-                console.log(item);
                 return (
                   <div
                     key={index}
                     className="w-[49%] flex flex-row justify-start items-center border border-[gray] my-2 p-2"
                   >
                     <div
-                      className={`w-[50px] h-[50px] flex justify-center items-start rounded-[50%] m-2 bg-[${item.image_bg}]`}
+                      className={`w-[50px] h-[50px] flex justify-center items-start rounded-[50%] m-2 bg-[yellow]`}
                     >
                       <img
                         src={item.image_url}
