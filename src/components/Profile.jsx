@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { FaDiscord } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
@@ -40,6 +40,35 @@ const Profile = () => {
       address: "0x3aAf47f53886DB6655E777ab2b752172Cfe5a4c5",
     },
   ]);
+
+  let featuredItem = featuredProfileItems.map((item, index) => {
+    return (
+      <div
+        key={index}
+        className="w-[49%] flex flex-row justify-start items-center border border-[gray] my-2 p-2"
+      >
+        <div
+          className={`w-[50px] h-[50px] flex justify-center items-start rounded-[50%] m-2 bg-[${item.image_bg}]`}
+        >
+          <img
+            src={item.image_url}
+            className="w-[50px] h-[50px]"
+            alt="Featured icons"
+          />
+        </div>
+        <div className="flex flex-col">
+          <p>
+            <b>{item.name}</b>
+          </p>
+          <p>{`${item.address.slice(0, 5)}...${item.address.slice(
+            item.address.length - 5,
+            item.address.length
+          )}`}</p>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <div className="w-full flex justify-center items-center">
       <div className="w-[90%] flex flex-row justify-start items-start place-items-baseline">
@@ -68,33 +97,7 @@ const Profile = () => {
               <b>Featured Profiles</b>
             </p>
             <div className="w-full flex flex-row flex-wrap justify-between items-center">
-              {featuredProfileItems.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="w-[49%] flex flex-row justify-start items-center border border-[gray] my-2 p-2"
-                  >
-                    <div
-                      className={`w-[50px] h-[50px] flex justify-center items-start rounded-[50%] m-2 bg-[yellow]`}
-                    >
-                      <img
-                        src={item.image_url}
-                        className="w-[50px] h-[50px]"
-                        alt="Featured icons"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <p>
-                        <b>{item.name}</b>
-                      </p>
-                      <p>{`${item.address.slice(0, 5)}...${item.address.slice(
-                        item.address.length - 5,
-                        item.address.length
-                      )}`}</p>
-                    </div>
-                  </div>
-                );
-              })}
+              {featuredItem}
             </div>
           </div>
         </div>
@@ -159,46 +162,50 @@ const Profile = () => {
             </p>
           </div>
           <div className="w-full flex flex-col py-5">
-            <p className="text-[20px]">
+            <p className="text-[20px] mb-5">
               <b>Collect'em all!</b>
             </p>
             <div className="w-full flex flex-row flex-wrap">
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1">
                 <img src={ticket} className="blur-sm" alt="ticket" />
-                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-black opacity-70" />
+                <FaLock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[130%] blur-none text-black opacity-70" />
               </div>
               <div className="relative w-[30%] flex justify-center items-center p-1 border-2 border-[cyan]">
                 <FaShoppingCart className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-none text-[cyan] opacity-70" />
               </div>
             </div>
+            <p className="w-full text-[10px] text-[#606060] font-bold py-2">
+              Note: color doesn't affect your odds of winning. Eliminated
+              tickets still count for your unlock!
+            </p>
           </div>
         </div>
 

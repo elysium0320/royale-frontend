@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 const Leaderboards = () => {
   return (
     <div className="w-full flex justify-center items-center">
